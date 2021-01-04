@@ -19,7 +19,7 @@ RUN apk add --no-cache ca-certificates \
     chmod +x /usr/bin/helm3 && \
     rm -rf linux-amd64 && \
     # Init version 2 helm:
-    helm init --client-only && \
+    helm init --stable-repo-url=https://charts.helm.sh/stable --client-only && \
     # Upgrade pip and awscli:
     python3 -m pip install -U pip && python3 -m pip install --upgrade awscli
 
